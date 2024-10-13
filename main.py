@@ -1,4 +1,5 @@
 import telebot
+# подключи библиотеку python Packages telebot
 import datetime
 import time
 import threading
@@ -29,7 +30,7 @@ def fact_message(message):
     bot.reply_to(message, text=f'Лови факт о воде: {random_fact}')
 
 def send_reminders(chat_id):
-    first_rem = ("05:00")
+    first_rem = ("02:15")
     second_rem = ("06:00")
     end_rem = ("07:00")
     rem8 = ("08:00")
