@@ -14,6 +14,10 @@ def start_message(message):
     bot.reply_to(message, text='Привет.Моё имя МИНЗИФА. Я чат-бот, который будет напоминать тебе пить водичку!')
     reminder_thread=threading.Thread(target=send_reminders, args=(message.chat.id,))
     reminder_thread.start()
+@bot.message_handler(commands=['help'])
+def help_message(message):
+    bot.reply_to(message, text="Задайте Ваш вопрос")
+
 
 # Обработчик команды /start
 @bot.message_handler(commands=['fact'])
