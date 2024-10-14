@@ -6,7 +6,7 @@ import threading
 import random
 
 # Создаем бота с использованием правильного метода TeleBot
-bot = telebot.TeleBot("7281452422:AAGkE9wjqIJmLvnXGNKTAhL6FZJhkaKGJgU")
+bot = telebot.TeleBot("Введите токен")
 
 # Обработчик команды /start
 @bot.message_handler(commands=['start'])
@@ -14,12 +14,14 @@ def start_message(message):
     bot.reply_to(message, text='Привет.Моё имя МИНЗИФА. Я чат-бот, который будет напоминать тебе пить водичку!')
     reminder_thread=threading.Thread(target=send_reminders, args=(message.chat.id,))
     reminder_thread.start()
+
+    # Обработчик команды /help
 @bot.message_handler(commands=['help'])
 def help_message(message):
     bot.reply_to(message, text="Задайте Ваш вопрос")
 
 
-# Обработчик команды /start
+# Обработчик команды /fact
 @bot.message_handler(commands=['fact'])
 def fact_message(message):
     bot.reply_to(message, text='Привет. МИНЗИФА. Я чат-бот, который будет напоминать тебе пить водичку!')
@@ -34,7 +36,7 @@ def fact_message(message):
     bot.reply_to(message, text=f'Лови факт о воде: {random_fact}')
 
 def send_reminders(chat_id):
-    first_rem = ("02:15")
+    first_rem = ("03:00")
     second_rem = ("06:00")
     end_rem = ("07:00")
     rem8 = ("08:00")
